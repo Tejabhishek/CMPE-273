@@ -43,7 +43,7 @@ for i in res_new:
 cou_dict = collections.Counter(my_list)
 cou_dict_sort = dict(sorted(cou_dict.items(), key=lambda x: x[1],reverse=True))
 
-print(""""pid","laddr","raddr","status""")
+print(""""pid","laddr","raddr","status"""")
 for key,value in cou_dict_sort.items():
     for l in res_new:
         if key == l.pid:

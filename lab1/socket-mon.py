@@ -7,27 +7,7 @@ Group by the PID and sort the output by the number of the connections per proces
 
 Author : Sai Ravi Tejabhishek Sreepada
 Date : 16th Feb, 2017
-Subject : CMPE - 273 - Lab 1
-
-Output:
-
-"pid","laddr","raddr","status
-"5764","127.0.0.1@50154","127.0.0.1@50153","ESTABLISHED"
-"5764","127.0.0.1@50155","127.0.0.1@50156","ESTABLISHED"
-"5764","127.0.0.1@50153","127.0.0.1@50154","ESTABLISHED"
-"5764","127.0.0.1@50156","127.0.0.1@50155","ESTABLISHED"
-"6036","2601:646:8400:d612:302c:25ce:4c9b:3b64@51147","2607:f8b0:400e:c00::bc@5228","ESTABLISHED"
-"6036","10.0.0.32@52554","198.252.206.25@443","ESTABLISHED"
-"4","10.0.0.32@139","10.0.0.241@58566","ESTABLISHED"
-"4","10.0.0.32@139","10.0.0.241@58565","ESTABLISHED"
-"3544","127.0.0.1@49162","127.0.0.1@62522","ESTABLISHED"
-"3268","10.0.0.32@49237","23.74.64.60@443","CLOSE_WAIT"
-"1304","127.0.0.1@62522","127.0.0.1@49162","ESTABLISHED"
-
-Process finished with exit code 0
-
-
-'''
+Subject : CMPE - 273 - Lab 1'''
 
 import psutil
 import collections
@@ -43,7 +23,7 @@ for i in res_new:
 cou_dict = collections.Counter(my_list)
 cou_dict_sort = dict(sorted(cou_dict.items(), key=lambda x: x[1],reverse=True))
 
-print(""""pid","laddr","raddr","status"""")
+print(""""pid","laddr","raddr","status""")
 for key,value in cou_dict_sort.items():
     for l in res_new:
         if key == l.pid:
@@ -52,5 +32,3 @@ for key,value in cou_dict_sort.items():
             if l.raddr:
                 raddr = "%s@%s" % l.raddr
                 print("\""+str(l.pid)+"\",\""+ str(laddr)+"\",\""+ str(raddr)+"\",\""+ str(l.status)+"\"")
-              
-

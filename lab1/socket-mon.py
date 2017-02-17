@@ -52,5 +52,5 @@ for key,value in cou_dict_sort.items():
             if l.raddr:
                 raddr = "%s@%s" % l.raddr
                 print("\""+str(l.pid)+"\",\""+ str(laddr)+"\",\""+ str(raddr)+"\",\""+ str(l.status)+"\"")
-                
-                
+              
+
